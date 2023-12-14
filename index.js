@@ -1,15 +1,29 @@
 const express = require("express");
+const recipes = require("./recipes");
 
+const PORT = 3000;
 const app = express();
 
+app.use(express.json());
+
 app.get("/", (req, res) => {
-  res.send({ code: 200, msg: "OK" });
+  res.send({ info: `Hello World!` });
 });
 
-app.get("/profile", (req, res) => {
-  res.status(403).send();
+app.get("/recipes", (req, res) => {
+  res.json(recipes);
 });
 
-app.listen(3000, () => {
-  console.log("Running on http://127.0.0.1:3000");
+app.get("/recipes/:id", (req, res) => {
+  const recipeId = parseInt(req.params.id);
+  const recipe = recipes.find((recipe) => recipe.id === recipeId);
+  if (recipe) {
+    res.json(recipe);
+  } else {
+    res.status(404).json({ error: "Recipe not found bro " });
+  }
 });
+
+app.listen(PORT, () =>
+  console.log(`Server Running at http://localhost:${PORT}/`)
+);
