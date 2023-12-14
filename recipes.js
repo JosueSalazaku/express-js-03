@@ -1,5 +1,6 @@
 const recipes = [
   {
+    id: 1,
     name: "Muamba de Galinha (Angolan Chicken Stew)",
     ingredients: [
       "1 whole chicken, cut into pieces",
@@ -59,3 +60,4 @@ const recipes = [
 ];
 
 // Access other recipes using recipes[1], recipes[2], etc.
+module.exports = recipes;
