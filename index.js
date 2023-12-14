@@ -15,6 +15,7 @@ app.get("/recipes", (req, res) => {
 });
 
 app.get("/recipes/:id", (req, res) => {
+  // Fix the route path
   const recipeId = parseInt(req.params.id);
   const recipe = recipes.find((recipe) => recipe.id === recipeId);
   if (recipe) {
