@@ -25,16 +25,30 @@ app.get("/recipes/:id", (req, res) => {
 });
 
 app.post("/recipes", (req, res) => {
-  const newRecipe = {
-    id: recipes.length + 1,
-    name: req.body.name,
-    ingredients: req.body.ingredients,
-    instructions: req.body.instructions,
-  };
+  const {
+    name,
+    img,
+    timeToPrepare,
+    ingredients,
+    listOfSteps,
+    cuisine,
+    favorite,
+  } = req.body;
 
-  if (!newRecipe.name || !newRecipe.ingredients || !newRecipe.instructions) {
+  if (!name || !ingredients || !listOfSteps) {
     return res.status(400).json({ error: "Invalid recipe data" });
   }
+
+  const newRecipe = {
+    id: recipes.length + 1,
+    name,
+    img,
+    timeToPrepare,
+    ingredients,
+    listOfSteps,
+    cuisine,
+    favorite,
+  };
 
   recipes.push(newRecipe);
   res
