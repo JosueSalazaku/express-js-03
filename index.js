@@ -25,14 +25,23 @@ app.get("/recipes/:id", (req, res) => {
 });
 
 app.post("/recipes", (req, res) => {
-  const newRecipe = req.body;
+  const newRecipe = {
+    id: recipes.length + 1,
+    name: req.body.name,
+    ingredients: req.body.ingredients,
+    instructions: req.body.instructions,
+  };
+
   if (!newRecipe.name || !newRecipe.ingredients || !newRecipe.instructions) {
     return res.status(400).json({ error: "Invalid recipe data" });
   }
-  newRecipe.id = recipes.lenght + 1;
+
   recipes.push(newRecipe);
-  res.status(201).json({ message: "Recipe added successfully!" });
+  res
+    .status(201)
+    .json({ message: "Recipe added successfully!", recipe: newRecipe });
 });
+
 app.listen(PORT, () =>
   console.log(`Server Running at http://localhost:${PORT}/`)
 );
