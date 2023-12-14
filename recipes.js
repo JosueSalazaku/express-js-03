@@ -2,7 +2,7 @@ const recipes = [
   {
     id: 1,
     name: "Muamba de Galinha",
-    img: "https://example.com/muamba-de-galinha-image.jpg",
+    img: "https://www.cozinharsemstress.pt/cozinhar/wp-content/uploads/2019/02/A-001-3741.jpg",
     timeToPrepare: "2 hours",
     ingredients: [
       "1 whole chicken, cut into pieces",
@@ -53,7 +53,7 @@ const recipes = [
   {
     id: 2,
     name: "Pasteis de Nata",
-    img: "https://example.com/pasteis-de-nata-image.jpg",
+    img: "https://cdn.heelhollandbakt.nl/2023/03/Pastel-de-nata-950x550.jpg",
     timeToPrepare: "1.5 hours",
     ingredients: [
       "2 sheets of puff pastry (store-bought or homemade)",
@@ -128,7 +128,7 @@ const recipes = [
   {
     id: 4,
     name: "Meatball Burrito",
-    img: "https://example.com/meatball-burrito-image.jpg",
+    img: "https://farmrich.com/wp-content/uploads/2017/03/FR-000019-Recipe-MB-Burrito_v1.jpg",
     timeToPrepare: "30 minutes",
     ingredients: [
       "1 pound ground beef",
