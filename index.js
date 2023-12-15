@@ -1,5 +1,8 @@
 const express = require("express");
 const recipes = require("./recipes");
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 const PORT = 3000;
 const app = express();
@@ -15,7 +18,6 @@ app.get("/recipes", (req, res) => {
 });
 
 app.get("/recipes/:id", (req, res) => {
-  // Fix the route path
   const recipeId = parseInt(req.params.id);
   const recipe = recipes.find((recipe) => recipe.id === recipeId);
   if (recipe) {
